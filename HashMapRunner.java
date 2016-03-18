@@ -11,8 +11,8 @@ public class HashMapRunner {
 
         // a real java map
         HashMap<String, Integer> realMap = new HashMap<String, Integer>();
-        realMap.put("foo", new Integer(4));
-        realMap.put("bar", new Integer(42));
+        realMap.put("foo", 4);
+        realMap.put("bar", 42);
 
         // if our map works, we should get the same results
         Integer myMapFoo = myMap.get("foo");
