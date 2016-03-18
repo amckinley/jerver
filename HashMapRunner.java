@@ -14,7 +14,7 @@ public class HashMapRunner {
         realMap.put("foo", 4);
         realMap.put("bar", 42);
 
-        // if our map works, we should get the same results
+        // TESTS FOR GET()
         Integer myMapFoo = myMap.get("foo");
         Integer realMapFoo = realMap.get("foo");
 
@@ -24,12 +24,22 @@ public class HashMapRunner {
         System.out.println("real foo: " + realMapFoo + ", my foo: " + myMapFoo + ", equal: " + realMapFoo.equals(myMapFoo));
         System.out.println("real bar: " + realMapBar + ", my bar: " + myMapBar + ", equal: " + realMapBar.equals(myMapBar));
 
+        // TESTS FOR CONTAINSKEY()
         Boolean myMapContains = myMap.containsKey("foo");
         Boolean myMapNotContains = myMap.containsKey("not");
         Boolean realMapContains = realMap.containsKey("foo");
         Boolean realMapNotContains = realMap.containsKey("not");
 
         System.out.println(myMapContains + ", " + myMapNotContains + ", " + realMapContains + ", " + realMapNotContains);
+
+        // TESTS FOR UPDATES
+        myMap.put("foo", 21);
+        realMap.put("foo", 21);
+
+        myMapFoo = myMap.get("foo");
+        realMapFoo = realMap.get("foo");
+
+        System.out.println("real was: " + realMapFoo + ", mine was: " + myMapFoo +  ", equal: " + realMapFoo.equals(myMapFoo));
 
     }
 }
