@@ -20,6 +20,19 @@ public class ArrayListMap<K, V> implements Map<K, V> {
     public V get(Object key) {
         // loop through this.internalList. check every Map.Entry object to see if the
         // entry's Key matches the key argument we got passed
+        for (Map.Entry<K, V> current : this.internalList) {
+
+            // print the item at that position in the list
+            System.out.println("current is: " + current);
+            System.out.println(current.getKey());
+            System.out.println(current.getValue());
+            System.out.println(current.getKey().equals(key));
+
+            if (current.getKey().equals(key)) {
+                return current.getValue();
+            }
+        }
+
         return null;
     }
 
@@ -30,6 +43,8 @@ public class ArrayListMap<K, V> implements Map<K, V> {
         Map.Entry<K, V> entry = new AbstractMap.SimpleEntry<K, V>(key, value);
 
         // stick the entry at the end of the list
+        internalList.add(entry);
+
         return null;
     }
 
@@ -39,8 +54,14 @@ public class ArrayListMap<K, V> implements Map<K, V> {
     }
 
     public boolean containsKey(Object key) {
-        return true;
 
+        for (Map.Entry<K, V> current : this.internalList) {
+            if (current.getKey().equals(key)) {
+                return true;
+            }
+        }
+
+        return false;
     }
 
     public boolean containsValue(Object value) {

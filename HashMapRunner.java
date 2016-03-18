@@ -24,5 +24,12 @@ public class HashMapRunner {
         System.out.println("real foo: " + realMapFoo + ", my foo: " + myMapFoo + ", equal: " + realMapFoo.equals(myMapFoo));
         System.out.println("real bar: " + realMapBar + ", my bar: " + myMapBar + ", equal: " + realMapBar.equals(myMapBar));
 
+        Boolean myMapContains = myMap.containsKey("foo");
+        Boolean myMapNotContains = myMap.containsKey("not");
+        Boolean realMapContains = realMap.containsKey("foo");
+        Boolean realMapNotContains = realMap.containsKey("not");
+
+        System.out.println(myMapContains + ", " + myMapNotContains + ", " + realMapContains + ", " + realMapNotContains);
+
     }
 }
