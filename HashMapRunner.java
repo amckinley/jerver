@@ -6,8 +6,8 @@ public class HashMapRunner {
         // our map
         ArrayListMap<String, Integer> myMap = new ArrayListMap<String, Integer>();
 
-        myMap.put("foo", new Integer(4));
-        myMap.put("bar", new Integer(42));
+        myMap.put("foo", 4);
+        myMap.put("bar", 42);
 
         // a real java map
         HashMap<String, Integer> realMap = new HashMap<String, Integer>();
